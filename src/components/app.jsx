@@ -1,5 +1,6 @@
 // external
 import React, { Component } from 'react';
+import giphy from 'giphy-api';
 
 // internal
 import SearchBar from './search-bar.jsx';
@@ -14,6 +15,21 @@ class App extends Component {
       gifs: [],
       selectedGifId: 'xT9IgDEI1iZyb2wqo8'
     }
+
+    this.search('homer thinking');
+
+  }
+
+  search = (query) => {
+    giphy('yVMhiJNdLcjD9SgRy25fBavJYPf9SrGT').search({
+      q: query,
+      rating: 'g',
+      limit: 10
+    }, (err, res) => {
+      this.setState({
+        gifs: res.data
+      })
+    });
   }
 
   render() {
