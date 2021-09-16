@@ -3,9 +3,9 @@ import React, { Component } from "react";
 import giphy from "giphy-api";
 
 // internal
-import SearchBar from "./search-bar.jsx";
-import Gif from "./gif.jsx";
-import GifList from "./gif-list.jsx";
+import SearchBar from "./search-bar";
+import Gif from "./gif";
+import GifList from "./gif-list";
 
 class App extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class App extends Component {
     return (
       <div>
         <div className="left-scene">
-          <SearchBar searchFunction={this.search}></SearchBar>
+          <SearchBar searchFunction={this.search} />
           <div className="selected-gif">
             <Gif id={this.state.selectedGifId} />
           </div>
