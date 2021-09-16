@@ -16,6 +16,7 @@ class App extends Component {
       selectedGifId: 'xT9IgDEI1iZyb2wqo8'
     }
 
+    // default search if nothing is keyed in the search bar
     this.search('disney');
 
   }
